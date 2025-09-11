@@ -32,10 +32,10 @@ const options: Options = {
 // NOTE: Screws / the connector with
 // negative indices are placed automatically.
 // In the basic/advanced tab, these values were:
-// [left] screwIndices: [10.5, 52.5, 24.5, 3.5, 17.5, 34.5, 48.5]
-// [left] connectorIndex: 42.6
-// [right] screwIndices: [10.5, 52.5, 24.5, 3.5, 17.5, 34.5, 48.5]
-// [right] connectorIndex: 42.6
+// [left] screwIndices: [8.5, 42.5, 21.5, 2.5, 14.5, 25.5, 38.5]
+// [left] connectorIndex: 36
+// [right] screwIndices: [8.5, 42.5, 21.5, 2.5, 14.5, 25.5, 38.5]
+// [right] connectorIndex: 36
 
 /**
  * The planes used to position the clusters.
@@ -371,6 +371,28 @@ const fingersLeft: Key[] = [
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
+      .placeRow({
+        row: 2,
+        spacingOfRows: 20.5,
+        curvatureOfColumn: 15,
+        arc: 0,
+        columnForArc: 0.5
+      })
+      .transformBy(new Trsf().translate(0, 2.8, -4)
+      )
+      .placeColumn({
+        column: 0.5,
+        spacingOfColumns: 21.5,
+        curvatureOfRow: 5
+      })
+      .transformBy(leftFingersPlane),
+    keycap: { row: 4, profile: "xda" }
+  },
+  {
+    type: "mx-better",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
       .placeOnMatrix({
         column: -0.5,
         row: -2,
@@ -450,6 +472,23 @@ const fingersLeft: Key[] = [
       row: 4,
       profile: "xda"
     }
+  },
+  {
+    type: "mx-better",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
+      .placeOnMatrix({
+        column: -0.5,
+        row: 2,
+        spacingOfColumns: 21.5,
+        spacingOfRows: 20.5,
+        curvatureOfRow: 5,
+        curvatureOfColumn: 15,
+        arc: 0
+      })
+      .transformBy(leftFingersPlane),
+    keycap: { row: 4, profile: "xda" }
   },
   {
     type: "mx-better",
@@ -976,6 +1015,28 @@ const fingersRight: Key[] = [
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
+      .placeRow({
+        row: 2,
+        spacingOfRows: 20.5,
+        curvatureOfColumn: 15,
+        arc: 0,
+        columnForArc: -0.5
+      })
+      .transformBy(new Trsf().translate(0, 2.8, -4)
+      )
+      .placeColumn({
+        column: -0.5,
+        spacingOfColumns: 21.5,
+        curvatureOfRow: 5
+      })
+      .transformBy(rightFingersPlane),
+    keycap: { row: 4, profile: "xda" }
+  },
+  {
+    type: "mx-better",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
       .placeOnMatrix({
         column: 0.5,
         row: -2,
@@ -1055,6 +1116,23 @@ const fingersRight: Key[] = [
       row: 4,
       profile: "xda"
     }
+  },
+  {
+    type: "mx-better",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
+      .placeOnMatrix({
+        column: 0.5,
+        row: 2,
+        spacingOfColumns: 21.5,
+        spacingOfRows: 20.5,
+        curvatureOfRow: 5,
+        curvatureOfColumn: 15,
+        arc: 0
+      })
+      .transformBy(rightFingersPlane),
+    keycap: { row: 4, profile: "xda" }
   },
   {
     type: "mx-better",
