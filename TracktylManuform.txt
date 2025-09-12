@@ -32,10 +32,10 @@ const options: Options = {
 // NOTE: Screws / the connector with
 // negative indices are placed automatically.
 // In the basic/advanced tab, these values were:
-// [left] screwIndices: [8.5, 42.5, 21.5, 2.5, 14.5, 25.5, 38.5]
-// [left] connectorIndex: 36
-// [right] screwIndices: [8.5, 42.5, 21.5, 2.5, 14.5, 25.5, 38.5]
-// [right] connectorIndex: 36
+// [left] screwIndices: [8.5, 19.5, 41.5, 24.5, 35.5, 3.5, 12.5]
+// [left] connectorIndex: 33
+// [right] screwIndices: [8.5, 41.5, 21.5, 14.5, 2.5, 36.5, 24.5]
+// [right] connectorIndex: 33.8
 
 /**
  * The planes used to position the clusters.
@@ -601,7 +601,7 @@ const fingersLeft: Key[] = [
     cluster: "fingers",
     position: new Trsf()
       .placeOnMatrix({
-        column: 4.2,
+        column: 4.3,
         row: 0,
         spacingOfColumns: 21.5,
         spacingOfRows: 20.5,
@@ -616,6 +616,22 @@ const fingersLeft: Key[] = [
       sensor: "Joe (QMK)"
     },
     size: {}
+  },
+  {
+    type: "oled-128x32-0.91in-adafruit",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
+      .placeOnMatrix({
+        column: 3.5,
+        row: -1.75,
+        spacingOfColumns: 21.5,
+        spacingOfRows: 20.5,
+        curvatureOfRow: 5,
+        curvatureOfColumn: 15,
+        arc: 0
+      })
+      .transformBy(leftFingersPlane)
   }
 ]
 
@@ -1245,7 +1261,7 @@ const fingersRight: Key[] = [
     cluster: "fingers",
     position: new Trsf()
       .placeOnMatrix({
-        column: -4.2,
+        column: -4.3,
         row: 0,
         spacingOfColumns: 21.5,
         spacingOfRows: 20.5,
