@@ -612,7 +612,7 @@ const fingersLeft: Key[] = [
       .transformBy(leftFingersPlane),
     variant: {
       size: "45mm",
-      bearings: "Roller",
+      bearings: "BTU (7.5mm)",
       sensor: "Joe (QMK)"
     },
     size: {}
@@ -624,7 +624,7 @@ const fingersLeft: Key[] = [
     position: new Trsf()
       .placeOnMatrix({
         column: 3.5,
-        row: -1.75,
+        row: -1.9,
         spacingOfColumns: 21.5,
         spacingOfRows: 20.5,
         curvatureOfRow: 5,
@@ -1272,7 +1272,7 @@ const fingersRight: Key[] = [
       .transformBy(rightFingersPlane),
     variant: {
       size: "45mm",
-      bearings: "Roller",
+      bearings: "BTU (7.5mm)",
       sensor: "Joe (QMK)"
     },
     size: {}
