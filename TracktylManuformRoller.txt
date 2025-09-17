@@ -17,25 +17,20 @@ const options: Options = {
     { preset: "usb", size: "average" }
   ],
   connectorIndex: -1,
-  microcontroller: "promicro",
+  microcontroller: "kb2040-adafruit",
   microcontrollerAngle: 0,
   fastenMicrocontroller: true,
   flipConnectors: false,
   wristRestOrigin: new Trsf().translate(10, -110, 0),
-  shell: {
-    type: "tilt",
-    tilt: 15,
-    raiseBy: 3,
-    pattern: [10, 5]
-  }
+  shell: { type: "basic", lip: false }
 }
 // NOTE: Screws / the connector with
 // negative indices are placed automatically.
 // In the basic/advanced tab, these values were:
-// [left] screwIndices: [8.5, 19.5, 41.5, 24.5, 35.5, 3.5, 12.5]
-// [left] connectorIndex: 33
-// [right] screwIndices: [8.5, 41.5, 21.5, 14.5, 2.5, 36.5, 24.5]
-// [right] connectorIndex: 33.8
+// [left] screwIndices: [18.5, 31.5, 5.5, 37.5, 51.5, 12.5, 25.5]
+// [left] connectorIndex: 47.9
+// [right] screwIndices: [18.5, 31.5, 5.5, 37.5, 51.5, 12.5, 25.5]
+// [right] connectorIndex: 47.9
 
 /**
  * The planes used to position the clusters.
@@ -48,10 +43,10 @@ const rightFingersPlane = new Trsf()
   .translate(18, 35.6, -15.2)
 
 const rightThumbsPlane = new Trsf()
-  .rotate(-11.88888888888889, [0, 0, 0], [1, 0, 0])
-  .rotate(-24.8, [0, 0, 0], [0, 1, 0])
-  .rotate(34.44444444444444, [0, 0, 0], [0, 0, 1])
-  .translate(-35.8, -25.6, -7.1)
+  .rotate(28.866666666666667, [0, 0, 0], [1, 0, 0])
+  .rotate(12.355555555555556, [0, 0, 0], [0, 1, 0])
+  .rotate(-47.28888888888889, [0, 0, 0], [0, 0, 1])
+  .translate(-39.9, -33, -8)
   .transformBy(new Trsf()
     .translate(-18, -35.6, 15.2)
     .rotate(-0.26666666666666666, [0, 0, 0], [0, 0, 1])
@@ -72,10 +67,10 @@ const leftFingersPlane = new Trsf()
   .translate(-18, 35.6, -15.2)
 
 const leftThumbsPlane = new Trsf()
-  .rotate(-11.88888888888889, [0, 0, 0], [1, 0, 0])
-  .rotate(-24.8, [0, 0, 0], [0, 1, 0])
-  .rotate(34.44444444444444, [0, 0, 0], [0, 0, 1])
-  .translate(-35.8, -25.6, -7.1)
+  .rotate(28.866666666666667, [0, 0, 0], [1, 0, 0])
+  .rotate(-12.355555555555556, [0, 0, 0], [0, 1, 0])
+  .rotate(47.28888888888889, [0, 0, 0], [0, 0, 1])
+  .translate(39.9, -33, -8)
   .transformBy(new Trsf()
     .translate(18, -35.6, 15.2)
     .rotate(0.26666666666666666, [0, 0, 0], [0, 0, 1])
@@ -93,7 +88,7 @@ const leftThumbsPlane = new Trsf()
 /** Definitions for all keys. */
 const fingersLeft: Key[] = [
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -107,6 +102,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "5",
       row: 1,
@@ -114,7 +110,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -128,6 +124,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "t",
       row: 2,
@@ -135,7 +132,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -149,6 +146,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "g",
       row: 3,
@@ -156,7 +154,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -170,6 +168,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "b",
       row: 4,
@@ -177,7 +176,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -191,6 +190,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "4",
       row: 1,
@@ -198,7 +198,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -212,6 +212,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "r",
       row: 2,
@@ -219,7 +220,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -233,6 +234,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "f",
       home: "index",
@@ -241,7 +243,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -255,6 +257,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "v",
       row: 4,
@@ -262,7 +265,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -281,6 +284,7 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "3",
       row: 1,
@@ -288,7 +292,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -307,6 +311,7 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "e",
       row: 2,
@@ -314,7 +319,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -333,6 +338,7 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "d",
       home: "middle",
@@ -341,7 +347,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -360,6 +366,7 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "c",
       row: 4,
@@ -367,7 +374,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -386,10 +393,15 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
-    keycap: { row: 4, profile: "xda" }
+    variant: { hotswap: "Kailh" },
+    keycap: {
+      letter: "[",
+      row: 4,
+      profile: "xda"
+    }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -403,6 +415,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "2",
       row: 1,
@@ -410,7 +423,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -424,6 +437,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "w",
       row: 2,
@@ -431,7 +445,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -445,6 +459,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "s",
       home: "ring",
@@ -453,7 +468,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -467,6 +482,7 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "x",
       row: 4,
@@ -474,7 +490,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -488,10 +504,15 @@ const fingersLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftFingersPlane),
-    keycap: { row: 4, profile: "xda" }
+    variant: { hotswap: "Kailh" },
+    keycap: {
+      letter: "]",
+      row: 4,
+      profile: "xda"
+    }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -510,6 +531,7 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "1",
       row: 1,
@@ -517,7 +539,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -536,6 +558,7 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "q",
       row: 2,
@@ -543,7 +566,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -562,6 +585,7 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "a",
       home: "pinky",
@@ -570,7 +594,7 @@ const fingersLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -589,6 +613,7 @@ const fingersLeft: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(leftFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "z",
       row: 4,
@@ -601,53 +626,37 @@ const fingersLeft: Key[] = [
     cluster: "fingers",
     position: new Trsf()
       .placeOnMatrix({
-        column: 4.3,
+        column: 4,
         row: 0,
-        spacingOfColumns: 21.5,
-        spacingOfRows: 20.5,
-        curvatureOfRow: 5,
+        spacingOfColumns: 24,
+        spacingOfRows: 25,
+        curvatureOfRow: 0,
         curvatureOfColumn: 15,
         arc: 0
       })
       .transformBy(leftFingersPlane),
     variant: {
       size: "45mm",
-      bearings: "BTU (7.5mm)",
+      bearings: "Roller",
       sensor: "Joe (QMK)"
     },
     size: {}
-  },
-  {
-    type: "oled-128x32-0.91in-adafruit",
-    aspect: 1,
-    cluster: "fingers",
-    position: new Trsf()
-      .placeOnMatrix({
-        column: 3.5,
-        row: -1.9,
-        spacingOfColumns: 21.5,
-        spacingOfRows: 20.5,
-        curvatureOfRow: 5,
-        curvatureOfColumn: 15,
-        arc: 0
-      })
-      .transformBy(leftFingersPlane)
   }
 ]
 
 const thumbsLeft: Key[] = [
   {
-    type: "mx-better",
-    aspect: 1,
+    type: "mx-hotswap",
+    aspect: 1.5,
     cluster: "thumbs",
     position: new Trsf()
-      .rotate(-10.466666666666667, [0, 0, 0], [1, 0, 0])
-      .rotate(44.6, [0, 0, 0], [0, 1, 0])
-      .rotate(-68.46666666666667, [0, 0, 0], [0, 0, 1])
-      .translate(51.9, -33.4, -28.1)
+      .rotate(-3, [0, 0, 0], [1, 0, 0])
+      .rotate(0, [0, 0, 0], [0, 1, 0])
+      .rotate(-156, [0, 0, 0], [0, 0, 1])
+      .translate(13.4, 17.1, -0.1)
       .placeOnMatrix({
-        column: 0.4,
-        row: -0.34,
+        column: 0,
+        row: 0,
         spacingOfColumns: 20,
         spacingOfRows: 20,
         curvatureOfRow: 0,
@@ -655,6 +664,7 @@ const thumbsLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftThumbsPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       home: "thumb",
       row: 5,
@@ -662,17 +672,17 @@ const thumbsLeft: Key[] = [
     }
   },
   {
-    type: "mx-better",
-    aspect: 1,
+    type: "mx-hotswap",
+    aspect: 1.5,
     cluster: "thumbs",
     position: new Trsf()
-      .rotate(-10.466666666666667, [0, 0, 0], [1, 0, 0])
-      .rotate(44.6, [0, 0, 0], [0, 1, 0])
-      .rotate(-68.46666666666667, [0, 0, 0], [0, 0, 1])
-      .translate(34.6, -22.3, -25.2)
+      .rotate(-3, [0, 0, 0], [1, 0, 0])
+      .rotate(0, [0, 0, 0], [0, 1, 0])
+      .rotate(-156, [0, 0, 0], [0, 0, 1])
+      .translate(-1.3, 33.7, -0.1)
       .placeOnMatrix({
-        column: 0.29,
-        row: 0.67,
+        column: 0,
+        row: 0,
         spacingOfColumns: 20,
         spacingOfRows: 20,
         curvatureOfRow: 0,
@@ -680,45 +690,21 @@ const thumbsLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftThumbsPlane),
-    keycap: {
-      home: "thumb",
-      row: 5,
-      profile: "xda"
-    }
-  },
-  {
-    type: "mx-better",
-    aspect: 1,
-    cluster: "thumbs",
-    position: new Trsf()
-      .rotate(3.9555555555555557, [0, 0, 0], [1, 0, 0])
-      .rotate(37.08888888888889, [0, 0, 0], [0, 1, 0])
-      .rotate(-46.06666666666667, [0, 0, 0], [0, 0, 1])
-      .translate(22.7, -14.6, -13.4)
-      .placeOnMatrix({
-        column: 1.43,
-        row: -0.06,
-        spacingOfColumns: 20,
-        spacingOfRows: 20,
-        curvatureOfRow: 0,
-        curvatureOfColumn: 0,
-        arc: 0
-      })
-      .transformBy(leftThumbsPlane),
+    variant: { hotswap: "Kailh" },
     keycap: { row: 5, profile: "xda" }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "thumbs",
     position: new Trsf()
-      .rotate(-22.511111111111113, [0, 0, 0], [1, 0, 0])
-      .rotate(49.111111111111114, [0, 0, 0], [0, 1, 0])
-      .rotate(-85.77777777777777, [0, 0, 0], [0, 0, 1])
-      .translate(76.4, -49.2, -43.3)
+      .rotate(-5.977777777777778, [0, 0, 0], [1, 0, 0])
+      .rotate(5, [0, 0, 0], [0, 1, 0])
+      .rotate(-95, [0, 0, 0], [0, 0, 1])
+      .translate(15.1, -6, 0)
       .placeOnMatrix({
-        column: -0.64,
-        row: -0.44,
+        column: 0,
+        row: 0,
         spacingOfColumns: 20,
         spacingOfRows: 20,
         curvatureOfRow: 0,
@@ -726,20 +712,21 @@ const thumbsLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftThumbsPlane),
+    variant: { hotswap: "Kailh" },
     keycap: { row: 5, profile: "xda" }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "thumbs",
     position: new Trsf()
-      .rotate(-23.6, [0, 0, 0], [1, 0, 0])
-      .rotate(50.93333333333333, [0, 0, 0], [0, 1, 0])
-      .rotate(-87.24444444444444, [0, 0, 0], [0, 0, 1])
-      .translate(58.4, -37.6, -40.8)
+      .rotate(-13.977777777777778, [0, 0, 0], [1, 0, 0])
+      .rotate(4, [0, 0, 0], [0, 1, 0])
+      .rotate(-101, [0, 0, 0], [0, 0, 1])
+      .translate(-11.3, 1.1, 1.3)
       .placeOnMatrix({
-        column: -0.75,
-        row: 0.58,
+        column: 0,
+        row: 0,
         spacingOfColumns: 20,
         spacingOfRows: 20,
         curvatureOfRow: 0,
@@ -747,13 +734,58 @@ const thumbsLeft: Key[] = [
         arc: 0
       })
       .transformBy(leftThumbsPlane),
+    variant: { hotswap: "Kailh" },
+    keycap: { row: 5, profile: "xda" }
+  },
+  {
+    type: "mx-hotswap",
+    aspect: 1,
+    cluster: "thumbs",
+    position: new Trsf()
+      .rotate(-10, [0, 0, 0], [1, 0, 0])
+      .rotate(4, [0, 0, 0], [0, 1, 0])
+      .rotate(-105, [0, 0, 0], [0, 0, 1])
+      .translate(4, -24.9, -0.4)
+      .placeOnMatrix({
+        column: 0,
+        row: 0,
+        spacingOfColumns: 20,
+        spacingOfRows: 20,
+        curvatureOfRow: 0,
+        curvatureOfColumn: 0,
+        arc: 0
+      })
+      .transformBy(leftThumbsPlane),
+    variant: { hotswap: "Kailh" },
+    keycap: { row: 5, profile: "xda" }
+  },
+  {
+    type: "mx-hotswap",
+    aspect: 1,
+    cluster: "thumbs",
+    position: new Trsf()
+      .rotate(-21, [0, 0, 0], [1, 0, 0])
+      .rotate(2, [0, 0, 0], [0, 1, 0])
+      .rotate(-106, [0, 0, 0], [0, 0, 1])
+      .translate(-18.4, -18.4, -0.6)
+      .placeOnMatrix({
+        column: 0,
+        row: 0,
+        spacingOfColumns: 20,
+        spacingOfRows: 20,
+        curvatureOfRow: 0,
+        curvatureOfColumn: 0,
+        arc: 0
+      })
+      .transformBy(leftThumbsPlane),
+    variant: { hotswap: "Kailh" },
     keycap: { row: 5, profile: "xda" }
   }
 ]
 
 const fingersRight: Key[] = [
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -767,6 +799,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "6",
       row: 1,
@@ -774,7 +807,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -788,6 +821,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "y",
       row: 2,
@@ -795,7 +829,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -809,6 +843,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "h",
       row: 3,
@@ -816,7 +851,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -830,6 +865,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "n",
       row: 4,
@@ -837,7 +873,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -851,6 +887,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "7",
       row: 1,
@@ -858,7 +895,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -872,6 +909,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "u",
       row: 2,
@@ -879,7 +917,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -893,6 +931,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "j",
       home: "index",
@@ -901,7 +940,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -915,6 +954,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "m",
       row: 4,
@@ -922,7 +962,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -941,6 +981,7 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "8",
       row: 1,
@@ -948,7 +989,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -967,6 +1008,7 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "i",
       row: 2,
@@ -974,7 +1016,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -993,6 +1035,7 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "k",
       home: "middle",
@@ -1001,7 +1044,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1020,6 +1063,7 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: ",",
       row: 4,
@@ -1027,7 +1071,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1046,10 +1090,15 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
-    keycap: { row: 4, profile: "xda" }
+    variant: { hotswap: "Kailh" },
+    keycap: {
+      letter: "[",
+      row: 4,
+      profile: "xda"
+    }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1063,6 +1112,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "9",
       row: 1,
@@ -1070,7 +1120,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1084,6 +1134,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "o",
       row: 2,
@@ -1091,7 +1142,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1105,6 +1156,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "l",
       home: "ring",
@@ -1113,7 +1165,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1127,6 +1179,7 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: ".",
       row: 4,
@@ -1134,7 +1187,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1148,10 +1201,15 @@ const fingersRight: Key[] = [
         arc: 0
       })
       .transformBy(rightFingersPlane),
-    keycap: { row: 4, profile: "xda" }
+    variant: { hotswap: "Kailh" },
+    keycap: {
+      letter: "]",
+      row: 4,
+      profile: "xda"
+    }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1170,6 +1228,7 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "0",
       row: 1,
@@ -1177,7 +1236,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1196,6 +1255,7 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "p",
       row: 2,
@@ -1203,7 +1263,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1222,6 +1282,7 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: ";",
       home: "pinky",
@@ -1230,7 +1291,7 @@ const fingersRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
@@ -1249,6 +1310,7 @@ const fingersRight: Key[] = [
         curvatureOfRow: 5
       })
       .transformBy(rightFingersPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       letter: "/",
       row: 4,
@@ -1261,18 +1323,18 @@ const fingersRight: Key[] = [
     cluster: "fingers",
     position: new Trsf()
       .placeOnMatrix({
-        column: -4.3,
+        column: -4,
         row: 0,
-        spacingOfColumns: 21.5,
-        spacingOfRows: 20.5,
-        curvatureOfRow: 5,
+        spacingOfColumns: 24,
+        spacingOfRows: 22.5,
+        curvatureOfRow: 0,
         curvatureOfColumn: 15,
         arc: 0
       })
       .transformBy(rightFingersPlane),
     variant: {
       size: "45mm",
-      bearings: "BTU (7.5mm)",
+      bearings: "Roller",
       sensor: "Joe (QMK)"
     },
     size: {}
@@ -1281,17 +1343,17 @@ const fingersRight: Key[] = [
 
 const thumbsRight: Key[] = [
   {
-    type: "mx-better",
-    aspect: 1,
+    type: "mx-hotswap",
+    aspect: 1.5,
     cluster: "thumbs",
     position: new Trsf()
-      .rotate(17.8, [0, 0, 0], [1, 0, 0])
-      .rotate(3.2888888888888888, [0, 0, 0], [0, 1, 0])
-      .rotate(-8.2, [0, 0, 0], [0, 0, 1])
-      .translate(0, 0, 3.5)
+      .rotate(-3, [0, 0, 0], [1, 0, 0])
+      .rotate(0, [0, 0, 0], [0, 1, 0])
+      .rotate(156, [0, 0, 0], [0, 0, 1])
+      .translate(-13.4, 17.1, -0.1)
       .placeOnMatrix({
-        column: 0.4,
-        row: -0.34,
+        column: 0,
+        row: 0,
         spacingOfColumns: 20,
         spacingOfRows: 20,
         curvatureOfRow: 0,
@@ -1299,6 +1361,7 @@ const thumbsRight: Key[] = [
         arc: 0
       })
       .transformBy(rightThumbsPlane),
+    variant: { hotswap: "Kailh" },
     keycap: {
       home: "thumb",
       row: 5,
@@ -1306,17 +1369,17 @@ const thumbsRight: Key[] = [
     }
   },
   {
-    type: "mx-better",
-    aspect: 1,
+    type: "mx-hotswap",
+    aspect: 1.5,
     cluster: "thumbs",
     position: new Trsf()
-      .rotate(17.8, [0, 0, 0], [1, 0, 0])
-      .rotate(3.2888888888888888, [0, 0, 0], [0, 1, 0])
-      .rotate(-8.2, [0, 0, 0], [0, 0, 1])
-      .translate(0, 0, -4.2)
+      .rotate(-3, [0, 0, 0], [1, 0, 0])
+      .rotate(0, [0, 0, 0], [0, 1, 0])
+      .rotate(156, [0, 0, 0], [0, 0, 1])
+      .translate(1.3, 33.7, -0.1)
       .placeOnMatrix({
-        column: 0.29,
-        row: 0.67,
+        column: 0,
+        row: 0,
         spacingOfColumns: 20,
         spacingOfRows: 20,
         curvatureOfRow: 0,
@@ -1324,45 +1387,21 @@ const thumbsRight: Key[] = [
         arc: 0
       })
       .transformBy(rightThumbsPlane),
-    keycap: {
-      home: "thumb",
-      row: 5,
-      profile: "xda"
-    }
-  },
-  {
-    type: "mx-better",
-    aspect: 1,
-    cluster: "thumbs",
-    position: new Trsf()
-      .rotate(15.11111111111111, [0, 0, 0], [1, 0, 0])
-      .rotate(16, [0, 0, 0], [0, 1, 0])
-      .rotate(-21.8, [0, 0, 0], [0, 0, 1])
-      .translate(0, 0, 0.4)
-      .placeOnMatrix({
-        column: 1.43,
-        row: -0.06,
-        spacingOfColumns: 20,
-        spacingOfRows: 20,
-        curvatureOfRow: 0,
-        curvatureOfColumn: 0,
-        arc: 0
-      })
-      .transformBy(rightThumbsPlane),
+    variant: { hotswap: "Kailh" },
     keycap: { row: 5, profile: "xda" }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "thumbs",
     position: new Trsf()
-      .rotate(18.2, [0, 0, 0], [1, 0, 0])
-      .rotate(-7.111111111111111, [0, 0, 0], [0, 1, 0])
-      .rotate(-1, [0, 0, 0], [0, 0, 1])
-      .translate(0, 0, 3.1)
+      .rotate(-5.977777777777778, [0, 0, 0], [1, 0, 0])
+      .rotate(-5, [0, 0, 0], [0, 1, 0])
+      .rotate(95, [0, 0, 0], [0, 0, 1])
+      .translate(-15.1, -6, 0)
       .placeOnMatrix({
-        column: -0.64,
-        row: -0.44,
+        column: 0,
+        row: 0,
         spacingOfColumns: 20,
         spacingOfRows: 20,
         curvatureOfRow: 0,
@@ -1370,20 +1409,21 @@ const thumbsRight: Key[] = [
         arc: 0
       })
       .transformBy(rightThumbsPlane),
+    variant: { hotswap: "Kailh" },
     keycap: { row: 5, profile: "xda" }
   },
   {
-    type: "mx-better",
+    type: "mx-hotswap",
     aspect: 1,
     cluster: "thumbs",
     position: new Trsf()
-      .rotate(18.31111111111111, [0, 0, 0], [1, 0, 0])
-      .rotate(-9.088888888888889, [0, 0, 0], [0, 1, 0])
-      .rotate(-1.488888888888889, [0, 0, 0], [0, 0, 1])
-      .translate(0, 0, -5.3)
+      .rotate(-13.977777777777778, [0, 0, 0], [1, 0, 0])
+      .rotate(-4, [0, 0, 0], [0, 1, 0])
+      .rotate(101, [0, 0, 0], [0, 0, 1])
+      .translate(11.3, 1.1, 1.3)
       .placeOnMatrix({
-        column: -0.75,
-        row: 0.58,
+        column: 0,
+        row: 0,
         spacingOfColumns: 20,
         spacingOfRows: 20,
         curvatureOfRow: 0,
@@ -1391,6 +1431,51 @@ const thumbsRight: Key[] = [
         arc: 0
       })
       .transformBy(rightThumbsPlane),
+    variant: { hotswap: "Kailh" },
+    keycap: { row: 5, profile: "xda" }
+  },
+  {
+    type: "mx-hotswap",
+    aspect: 1,
+    cluster: "thumbs",
+    position: new Trsf()
+      .rotate(-10, [0, 0, 0], [1, 0, 0])
+      .rotate(-4, [0, 0, 0], [0, 1, 0])
+      .rotate(105, [0, 0, 0], [0, 0, 1])
+      .translate(-4, -24.9, -0.4)
+      .placeOnMatrix({
+        column: 0,
+        row: 0,
+        spacingOfColumns: 20,
+        spacingOfRows: 20,
+        curvatureOfRow: 0,
+        curvatureOfColumn: 0,
+        arc: 0
+      })
+      .transformBy(rightThumbsPlane),
+    variant: { hotswap: "Kailh" },
+    keycap: { row: 5, profile: "xda" }
+  },
+  {
+    type: "mx-hotswap",
+    aspect: 1,
+    cluster: "thumbs",
+    position: new Trsf()
+      .rotate(-21, [0, 0, 0], [1, 0, 0])
+      .rotate(-2, [0, 0, 0], [0, 1, 0])
+      .rotate(106, [0, 0, 0], [0, 0, 1])
+      .translate(18.4, -18.4, -0.6)
+      .placeOnMatrix({
+        column: 0,
+        row: 0,
+        spacingOfColumns: 20,
+        spacingOfRows: 20,
+        curvatureOfRow: 0,
+        curvatureOfColumn: 0,
+        arc: 0
+      })
+      .transformBy(rightThumbsPlane),
+    variant: { hotswap: "Kailh" },
     keycap: { row: 5, profile: "xda" }
   }
 ]
