@@ -52,6 +52,7 @@ pcbs:
           reversible: true
           solder: true
           include_keycap: true
+          hotswap: true
       mcu:
         what: ceoloide/mcu_nice_nano
         where:
