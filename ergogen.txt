@@ -22,10 +22,18 @@ points:
     thumb:
       anchor:
         ref: matrix_c4_r1
-        shift: [1.25U, -1.3U]
-        rotate: -15
+        shift: [-1U, -0.75U]
       columns:
+        c1:
+          key.spread: U
+          key.origin: [-0.5U, -0.75U]
+        c2:
+          key.spread: U
+          key.stagger: -0.25U
+          key.origin: [-0.5U, -0.5U]
         c3:
+          key.stagger: -0.25U
+          key.rotate: -5
           key.name: thumb_tucky
         c4:
           key.spread: U
