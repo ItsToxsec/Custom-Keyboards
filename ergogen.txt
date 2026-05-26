@@ -33,12 +33,13 @@ points:
           key.origin: [-0.5U, -0.5U]
         c3:
           key.stagger: -0.25U
-          key.rotate: -5
+          key.rotate: -10
+          key.spread: 1.5U
           key.name: thumb_tucky
         c4:
           key.spread: U
           key.splay: -15
-          key.origin: [-0.5U, -0.5U]
+          key.origin: [-0.85U, -0.2U]
           key.name: thumb_reachy
         c5:
           key.spread: U
