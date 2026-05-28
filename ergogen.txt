@@ -86,3 +86,8 @@ pcbs:
           P19_label: " "
           P20_label: " "
           P21_label: " "
+      screen:
+        what: ceoloide/display_nice_view  
+        where:
+          - ref: matrix_c5_r4
+            shift: [1U, 0.5U]
