@@ -48,6 +48,23 @@ points:
           key.name: thumb_extra
       rows:
         r0.padding: U
+    thumby:
+      anchor:
+        ref: matrix_c4_r1
+        shift: [2.3U, -0.3U]
+      columns:
+        c1:
+          key.spread: U
+          key.rotate: -15
+          key.origin: [-0.5U, -0.75U]
+        c2:
+          key.spread: U
+          key.stagger: -0.25U
+          key.splay: -20
+          key.rotate: -5
+          key.origin: [-0.5U, -0.5U]
+      rows:
+        r5.padding: U
 pcbs:
   simple_split:
     template: kicad8
