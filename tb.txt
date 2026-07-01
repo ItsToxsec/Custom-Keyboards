@@ -457,11 +457,11 @@ const fingersLeft: Key[] = [
       .translate(0, 31.3, -29.2)
       .placeOnMatrix({
         column: -0.25,
-        row: 3.25,
+        row: 3,
         spacingOfColumns: 21.5,
         spacingOfRows: 20.5,
-        curvatureOfRow: 10,
-        curvatureOfColumn: 0,
+        curvatureOfRow: 100,
+        curvatureOfColumn: 25,
         arc: 0
       })
       .transformBy(leftFingersPlane),
@@ -1083,10 +1083,10 @@ const fingersRight: Key[] = [
     position: new Trsf()
       .placeOnMatrix({
         column: 0.25,
-        row: 3.5,
+        row: 3.25,
         spacingOfColumns: 21.5,
         spacingOfRows: 20.5,
-        curvatureOfRow: 100,
+        curvatureOfRow: 60,
         curvatureOfColumn: 0,
         arc: 0
       })
