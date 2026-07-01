@@ -33,10 +33,10 @@ const options: Options = {
 // NOTE: Screws / the connector with
 // negative indices are placed automatically.
 // In the basic/advanced tab, these values were:
-// [left] screwIndices: [19.5, 29.5, 9.5, 34.5, 3.5, 24.5, 14.5]
-// [left] connectorIndex: 0.1
-// [right] screwIndices: [20.5, 9.5, 31.5, 36.5, 3.5, 25.5, 14.5]
-// [right] connectorIndex: 0.1
+// [left] screwIndices: [17.5, 27.5, 7.5, 2.5, 33.5, 22.5, 12.5]
+// [left] connectorIndex: 39.1
+// [right] screwIndices: [17.5, 27.5, 7.5, 2.5, 33.5, 22.5, 12.5]
+// [right] connectorIndex: 39.1
 
 /**
  * The planes used to position the clusters.
@@ -93,6 +93,28 @@ const leftThumbsPlane = new Trsf()
 
 /** Definitions for all keys. */
 const fingersLeft: Key[] = [
+  {
+    type: "mx-klavgen",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
+      .placeOnMatrix({
+        column: 2.5,
+        row: -2,
+        spacingOfColumns: 21.5,
+        spacingOfRows: 20.5,
+        curvatureOfRow: 5,
+        curvatureOfColumn: 15,
+        arc: 0
+      })
+      .transformBy(leftFingersPlane),
+    variant: { led: "North LED" },
+    keycap: {
+      letter: "5",
+      row: 1,
+      profile: "xda"
+    }
+  },
   {
     type: "mx-klavgen",
     aspect: 1,
@@ -451,17 +473,13 @@ const fingersLeft: Key[] = [
     aspect: 1,
     cluster: "fingers",
     position: new Trsf()
-      .rotate(60, [0, 0, 0], [1, 0, 0])
-      .rotate(0, [0, 0, 0], [0, 1, 0])
-      .rotate(0, [0, 0, 0], [0, 0, 1])
-      .translate(0, 31.3, -29.2)
       .placeOnMatrix({
         column: -0.25,
-        row: 3,
+        row: 3.25,
         spacingOfColumns: 21.5,
         spacingOfRows: 20.5,
-        curvatureOfRow: 100,
-        curvatureOfColumn: 25,
+        curvatureOfRow: 60,
+        curvatureOfColumn: 0,
         arc: 0
       })
       .transformBy(leftFingersPlane),
@@ -723,6 +741,28 @@ const thumbsLeft: Key[] = [
 ]
 
 const fingersRight: Key[] = [
+  {
+    type: "mx-klavgen",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
+      .placeOnMatrix({
+        column: -2.5,
+        row: -2,
+        spacingOfColumns: 21.5,
+        spacingOfRows: 20.5,
+        curvatureOfRow: 5,
+        curvatureOfColumn: 15,
+        arc: 0
+      })
+      .transformBy(rightFingersPlane),
+    variant: { led: "North LED" },
+    keycap: {
+      letter: "6",
+      row: 1,
+      profile: "xda"
+    }
+  },
   {
     type: "mx-klavgen",
     aspect: 1,
