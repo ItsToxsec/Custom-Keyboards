@@ -15,11 +15,15 @@ const options: Options = {
   clearScrews: true,
   rounded: {},
   connectors: [
-    { preset: "trrs" },
-    { preset: "usb", size: "average" }
+    { preset: "usb", size: "average" },
+    {
+      preset: "usb",
+      size: "average",
+      x: -20
+    }
   ],
   connectorIndex: -1,
-  microcontroller: "kb2040-adafruit",
+  microcontroller: "feather-rp2040-adafruit",
   microcontrollerAngle: 0,
   fastenMicrocontroller: true,
   flipConnectors: false,
@@ -33,10 +37,10 @@ const options: Options = {
 // NOTE: Screws / the connector with
 // negative indices are placed automatically.
 // In the basic/advanced tab, these values were:
-// [left] screwIndices: [15.5, 27.5, 4.5, 33.5, 46.5, 10.5, 20.5]
-// [left] connectorIndex: 42
-// [right] screwIndices: [15.5, 27.5, 4.5, 33.5, 46.5, 10.5, 20.5]
-// [right] connectorIndex: 42
+// [left] screwIndices: [20.5, 32.5, 8.5, 26.5, 39.5, 2.5, 14.5]
+// [left] connectorIndex: 48.7
+// [right] screwIndices: [20.5, 32.5, 8.5, 26.5, 39.5, 2.5, 14.5]
+// [right] connectorIndex: 48.7
 
 /**
  * The planes used to position the clusters.
@@ -541,6 +545,34 @@ const fingersLeft: Key[] = [
     cluster: "fingers",
     position: new Trsf()
       .placeRow({
+        row: -2,
+        spacingOfRows: 20.5,
+        curvatureOfColumn: 15,
+        curvatureOfColumnDisparity: 0,
+        arc: 0,
+        columnForArc: -1.5
+      })
+      .transformBy(new Trsf().translate(0, -13, 6)
+      )
+      .placeColumn({
+        column: -1.5,
+        spacingOfColumns: 21.5,
+        curvatureOfRow: 5
+      })
+      .transformBy(leftFingersPlane),
+    variant: { led: "North LED" },
+    keycap: {
+      letter: "1",
+      row: 1,
+      profile: "choc"
+    }
+  },
+  {
+    type: "choc-pumpkin",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
+      .placeRow({
         row: -1,
         spacingOfRows: 20.5,
         curvatureOfColumn: 15,
@@ -642,23 +674,6 @@ const fingersLeft: Key[] = [
       sensor: "Joe (QMK)"
     },
     size: {}
-  },
-  {
-    type: "oled-128x32-0.91in-adafruit",
-    aspect: 1,
-    cluster: "fingers",
-    position: new Trsf()
-      .placeOnMatrix({
-        column: 3.5,
-        row: -1,
-        spacingOfColumns: 21.5,
-        spacingOfRows: 20.5,
-        curvatureOfColumn: 15,
-        arc: 0,
-        curvatureOfColumnDisparity: 0,
-        curvatureOfRow: 5
-      })
-      .transformBy(leftFingersPlane)
   }
 ]
 
@@ -1256,6 +1271,34 @@ const fingersRight: Key[] = [
     cluster: "fingers",
     position: new Trsf()
       .placeRow({
+        row: -2,
+        spacingOfRows: 20.5,
+        curvatureOfColumn: 15,
+        curvatureOfColumnDisparity: 0,
+        arc: 0,
+        columnForArc: 1.5
+      })
+      .transformBy(new Trsf().translate(0, -13, 6)
+      )
+      .placeColumn({
+        column: 1.5,
+        spacingOfColumns: 21.5,
+        curvatureOfRow: 5
+      })
+      .transformBy(rightFingersPlane),
+    variant: { led: "North LED" },
+    keycap: {
+      letter: "0",
+      row: 1,
+      profile: "choc"
+    }
+  },
+  {
+    type: "choc-pumpkin",
+    aspect: 1,
+    cluster: "fingers",
+    position: new Trsf()
+      .placeRow({
         row: -1,
         spacingOfRows: 20.5,
         curvatureOfColumn: 15,
@@ -1357,23 +1400,6 @@ const fingersRight: Key[] = [
       sensor: "Joe (QMK)"
     },
     size: {}
-  },
-  {
-    type: "oled-128x32-0.91in-adafruit",
-    aspect: 1,
-    cluster: "fingers",
-    position: new Trsf()
-      .placeOnMatrix({
-        column: -3.5,
-        row: -1,
-        spacingOfColumns: 21.5,
-        spacingOfRows: 20.5,
-        curvatureOfColumn: 15,
-        arc: 0,
-        curvatureOfColumnDisparity: 0,
-        curvatureOfRow: 5
-      })
-      .transformBy(rightFingersPlane)
   }
 ]
 
